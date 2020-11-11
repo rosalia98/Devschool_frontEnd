@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevSchool2020</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <h1>Dev School 2020</h1>
+        
+    </header>
+    <nav>
+        <ul class="nav-list">
+            <li>
+                <a href="#internet">Internet</a>
+            </li>
+            <li>
+                <a href="#dns">DNS</a>
+            </li>
+            <li>
+                <a href="#dns">Formular</a>
+            </li>
+        </ul>
+    </nav>
+    <section class="section">
+        <h2>Internet</h2>
+    <p>Retea de calculatoare, servere</p>
+    <p>Baza de date si resurse</p>
+    <img 
+    src="https://devschool-2020.web.app/assets/internet.png" 
+    alt="Vint Cerf"
+    width = "50%">
+    <blockquote>
+        <p>The internet is a design philosophy and an architecture expressed in a set of protocols</p>
+        <img 
+    src="https://devschool-2020.web.app/assets/vint.png" 
+    alt="Vint Cerf"
+    width = "10%">
+    </blockquote>
+    </section>
+    
+    <section class = "section">
+        <h2>Protocol</h2>
+    <p>Un set de reguli, standard</p>
+    <h2>IP Address</h2>
+    <p>Computer address = Internet protocol address (IP address)</p>
+    </section>
+    
+
+    <h2>DNS</h2>
+    <p>Domain name system</p>
+    <p>Asociaza IP urile cu niste domenii</p>
+    <table>
+        <tbody>
+            <tr>
+                <td>wwww.example.com</td>
+                <td>192.0.2.0</td>
+            </tr>
+            <tr>
+                <td>wwww.google.com</td>
+                <td>172.217.256.174</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Web client</h2>
+    <p>User agent - program care reprezinta o persoana in contextul Web</p>
+    <p>Browser, aplicatie</p>
+
+    <section>
+        <h2>HTTP</h2>
+        <p>HyperText Transfer Protocol</p>
+        <p>Limbajul prin care comunica clientul cu un server</p>
+        <img 
+        src="https://devschool-2020.web.app/assets/http.png" 
+        alt=""
+        width="10%">
+    </section>
+    
+    <section>
+        <h2>HTTP Request methods</h2>
+        <ul>
+            <li>get - retrieve methods</li>
+            <li>post -send entity to resource</li>
+            <li>put - replace resource</li>
+            <li>head - similar to get, but without body: check if resource exists</li>
+            <li>options - describe comm options for the target resoruce</li>
+            <li>patch - apply partially modifications to a resource</li>
+            <li>delete - delete resource</li>
+        </ul>
+    <h2>http response codes</h2>
+    <ul>
+        <li>2xx - success</li>
+        <li>3xx - redirect</li>
+        <li>4xx - client error</li>
+        <li>5xx -server error</li>
+    </ul>
+    </section>
+    
+
+    <h2></h2>
+    <form action="/placeholder-endpoint" method="post" target="_blank">
+        <label for="nume">Nume</label>
+        <input type="text" name="nume" id="nume"><br><br>
+        <label for="prenume">Prenume</label>
+        <input type="text" name="prenume" id="prenume"><br><br>
+        <label for="datanasterii">Data Nasterii</label>
+        <input type="date" id="datanasterii" name="datanasterii"><br><br>
+        <label for="descriere">Descriere</label>
+        <textarea name="descriere" id="descriere" cols="50" rows="5"></textarea><br><br>
+        <input type="submit" value=Submit><br><br>
+    </form>
+    <footer>
+        <p>
+            dev school 2020
+        </p>
+    </footer>
+    
+</body>
+</html>

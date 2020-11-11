@@ -1,0 +1,45 @@
+/* body{
+    font-family: sans-serif;
+} */
+body{
+    font-family: serif;
+}
+#internet{
+    color:red;
+}
+.section{
+    border: 1px solid grey;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    position: sticky;
+    top:0;
+    background-color: white;
+}
+/* ul-ul din nav */
+/* nav ul{ 
+    list-style: none;
+} */
+.nav-list{
+    list-style: none;
+    display: flex;
+}
+.nav-list li{
+    border: 1px solid lightseagreen;
+    margin: 0 15 px;
+    flex: 1; 
+}
+.nav-list a{
+    display: block;
+    min-width: 120px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: darkcyan;
+}
+
+.nav-list li a:hover{
+    background-color: lightyellow;
+}
