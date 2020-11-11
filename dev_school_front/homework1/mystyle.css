@@ -1,0 +1,29 @@
+.subtitle, .main_title{
+    text-align: center;
+    padding-top: 10px;
+    font-family: 'Trocchi', serif;
+    color: darkslateblue;
+    font-weight: bold;
+
+}
+.short_description{
+    text-align: center;
+}
+.mylist{
+    list-style-type: none;
+}
+
+.article_title, .article_subtitle, .destination_title{
+    font-family: 'Trocchi', serif;
+    color: darkslateblue;
+    font-weight: bold;
+} 
+
+.copyright{
+    font-size: small;
+    background-color: lightgray;
+    padding: 10px;
+}
+.col{
+    padding-top: 20px;
+}
