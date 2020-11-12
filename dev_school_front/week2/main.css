@@ -1,0 +1,272 @@
+/*
+variabile in css (exp: salvam culoarea):
+exemplu2: pt dimensionare
+*/
+:root{
+    --color-purple: #a375ff;
+    --root-spacing: 8px;
+    --font-size-heading: 20px;
+}
+body{
+    background-color: lightblue;
+}
+/*text styles*/
+h1{
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    color: purple;
+}
+/*
+unitati absolute - pixel
+unitati relative:
+    em - relativ la elementul parinte
+    rem - relativ la elementul radacina (de obicei, <body>)
+    vw - viewport width
+    vh - viewport height
+*/
+html{
+    font-size: 20px;
+}
+.em li{
+    /*aici ii spui sa fie mai mare de 1.3em decat parintele*/
+    /*merg in cascada*/
+    font-size: 1.3em;
+    /*asa folosesti variabila culoare*/
+    color: var(--color-purple);
+}
+.rem li{
+    /*asta se raporteaza la radacina - html, toate-s la fel*/
+    font-size: 1.3rem;
+
+}
+.box-model{
+    width: 300px;
+    height: 100px;
+    background-color: rosybrown;
+    /*acum la latime se adauga cate 20px pe fiecare latura*/
+    padding: 20px;
+    /*acum se adauga si border la dimensiunea elementului*/
+    border: 10px solid gray;
+    margin: 20px;
+    /*asta face ca paddingul si borderul sa mearga in ibterior, in loc de exterior*/
+    /*schimba felul in care se calculeaza dimensiunile*/
+    box-sizing: border-box;
+}
+.var{
+    width: 100%;
+    height: 50px;
+    background-color: var(--color-primary);
+}
+.var-one{
+    
+}
+/*o variabila poate fi declarata in mai multe locuri, nu doar in root*/
+.var-two{
+    --color-primary: red;
+}
+/*valoarea lor se poate schimba*/
+.var-three{
+    --color-primary: green;
+}
+/*ia culorea divului parinte - rosu*/
+.var-four{
+    border: 1px solid black;
+}
+/* .button{
+    padding: calc(var(--root-spacing)*4);
+} */
+.position-static{
+    /*aici nu merge top, right, bottom, left*/
+    background: lightyellow;
+    padding: 1rem;
+    left: 10px;
+}
+.position-relative{
+    position: relative;
+    background: lightpink;
+    padding: 1rem;
+    /*le pot muta cu top, right, left, bottom*/
+    left:20px;
+    top: -10px; /*se duce peste divul static*/
+    z-index:30;
+}
+/*absolutul nu vine peste*/
+.position-absolute{
+    position: absolute;
+    background-color: aquamarine;
+    padding: 1rem;
+    right:50px;
+    top: 0; /*se va duce sus de tot daca e in afara div ului relative pentru ca nu are niciun parinte cu position relative*/
+    /*daca mut divul cu absolut in interiorul position relative, el se va muta in el*/
+    /*! elementul parinte are z-index de 30*/
+    z-index: 50;
+}
+
+/*urmareste scrollul pe tot parcursul paginii web, vezi diferenta fata de sticky*/
+.position-fixed{
+    position: fixed;
+    background: white;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    /*fara bottom nu va aparea in pagina. html incepe*/
+    /*fixed se va plimba dupa noi cand scrollam fata de absolut*/
+    z-index: 40; /*acum nu va aparea peste divul roz*/
+}
+.parent{
+    position: relative;
+    border: 2px solid grey;
+}
+/*sticky urmareste scrollul doar pe durata parintelui*/
+.position-sticky{
+    position: sticky;
+    background: red;
+    bottom:0;
+}
+.grid-container-vechi{
+    display:grid;
+    /* asta nu va merge fara display: grid*/
+    /*in loc de auto se pot pune dimensiuni fixe, exp: 200px*/
+    grid-template-columns: auto auto auto;
+    /*prop pt randuri:*/
+    grid-template-rows: 100px 200px auto;
+    /*adauga un spatiu de 10px intre randuri, respetiv 20 intre coloane*/
+    grid-row-gap: 10px;
+    grid-column-gap: 20px;
+    /*le poti ocmbina pe cele 2 intr o singura instructiune: */
+    /*grid-gap: 10px 20px; */
+}
+.grid-container{
+    display:grid;
+    /*6 coloane si 3 randuri - noi alegem*/
+    grid-template-areas: 
+    "header header header header header header"
+    "menu menu content content content right" 
+    "menu menu footer footer footer footer";
+    grid-gap: 15px;
+}
+.item{
+    grid-area: header;
+    background-color: cadetblue;
+    border: 1px solid yellowgreen;
+}
+.item1{
+    grid-area: header;
+}
+.item2{
+    grid-area: menu;
+}
+.item3{
+    grid-area: content;
+}
+.item4{
+    grid-area: right;
+}
+.item5{
+    grid-area: footer;
+}
+.item1{
+    /*de la ce coloana incepe - il mutam oriunde!*/
+    /* grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3; */
+    /*se pot face grupari:
+    grid-column: valoare1 valoare2 
+    sau grid-column: 1 /span 2 (de unde incepe si cate coloane se intinde)
+    la fel pt row*/
+    grid-area: 'elem';
+}
+.container-flex{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.container-flex div{
+    border: 1px solid grey;
+    background: white;
+}
+.container-flex div:nth-child(2){
+    flex:2;
+}
+.container-flex div:nth-child(3){
+    flex:3;
+}
+/* .container-flex.jusitfy{
+    justify-content: flex-start;
+} */
+.justify{
+    display: flex;
+    justify-content: space-around; /*pune aceeasi distanta intre ele*/
+    border: 1px solid red;
+}
+.justify div{
+    border: 1px solid grey;
+    background: white;
+}
+.align-content{
+    display: flex;
+    height: 100px;
+    /* flex-wrap: wrap; */
+    /* align-content: flex-start; */
+    border: 1px solid red;
+}
+.align-items{
+    display: flex;
+    height: 100px;
+    align-items: center;
+    border: 1px solid red;
+}
+.align-items div{
+    border: 1px solid grey;
+    background: white;
+    /* height:20px;
+    flex: none;
+    width: 40%; */
+}
+.align-items div:nth-child(2){
+    height: 80px;
+}
+.align-items div:nth-child(3){
+    height: 50px;
+}
+.definition{
+    background: lightblue;
+    border-left: 4px solid blue;
+    margin-bottom: 10px;
+}
+.definition__row{
+    display: flex;
+}
+.definition__property{
+    font-weight: bold;
+    flex: 1; /**/
+    color:blue;
+}
+.definition__value{
+    flex:1;
+}
+.definition--green{
+    background: lightyellow;
+    border-color: green;
+}
+.definition--green .definition__property{
+    color: green;
+    
+}
+@media print{
+    .item{
+        background-color: pink;
+    }
+}
+@media only screen and (max-width: 300px){
+    .grid-container{
+        grid-template-areas:
+        "header"
+        "menu"
+        "content"
+        "right"
+        "footer";
+    }
+}
