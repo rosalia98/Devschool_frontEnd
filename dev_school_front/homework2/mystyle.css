@@ -105,3 +105,6 @@ img{
     align-items:center;
     justify-content: center; */
 }
+div .flexbox-container:nth-child(2n){
+    text-align: right;
+}
