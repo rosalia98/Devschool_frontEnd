@@ -43,10 +43,6 @@ header{
 .textpart{
     background-color: var(--main-bakground-color) !important;
 }
-img{
-    width:80%;
-    object-fit: contain;
-}
 .flexbox-container{
     display: inline-block;
     margin-right:15%;

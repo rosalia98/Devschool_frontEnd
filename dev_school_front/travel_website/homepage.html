@@ -21,55 +21,15 @@
     <section class="main_content">
 
         <div class="grid-container">
-            <div class="item1">
-                <picture>
-                    <source media="(min-width: 600px )" srcset="https://picsum.photos/500/250">
-                        <img src="https://picsum.photos/200/300" alt="could not load">
-                </picture>
-            </div>
-            <div class="item2 textpart">
-                <h4>Article 1</h4>
-                <p>
-                    Aliquam erat sapien, posuere sit amet ligula et, volutpat consequat lectus. 
-                    In eu faucibus ante. Sed accumsan ex at tellus aliquet, cursus placerat nibh eleifend. 
-                    Integer dignissim et est ut auctor. Cras vitae nulla lorem. Nulla facilisi. Cras hendrerit 
-                    tellus eget urna ultrices suscipit. Duis laoreet imperdiet ipsum, id consequat libero tempor 
-                    eu. 
-                </p>
-            </div>
-            <div class="item3">
-                <picture>
-                    <source media="(min-width: 600px )" srcset="https://picsum.photos/500/250">
-                        <img src="https://picsum.photos/200/300" alt="could not load">
-                </picture>
-            </div>  
-            <div class="item4 textpart">
-                <h4>Article 2</h4>
-                <p>
-                    Aliquam erat sapien, posuere sit amet ligula et, volutpat consequat lectus. 
-                    In eu faucibus ante. Sed accumsan ex at tellus aliquet, cursus placerat nibh eleifend. 
-                    Integer dignissim et est ut auctor. Cras vitae nulla lorem. Nulla facilisi. Cras hendrerit 
-                    tellus eget urna ultrices suscipit. Duis laoreet imperdiet ipsum, id consequat libero tempor 
-                    eu. 
-                </p>
-            </div>
-            <div class="item5">
-                <picture>
-                    <source media="(min-width: 600px )" srcset="https://picsum.photos/500/250">
-                        <img src="https://picsum.photos/200/300" alt="could not load">
-                </picture>
-            </div>
-            <div class="item6 textpart">
-                <h4>Article 3</h4>
-                <p>
-                    Aliquam erat sapien, posuere sit amet ligula et, volutpat consequat lectus. 
-                    In eu faucibus ante. Sed accumsan ex at tellus aliquet, cursus placerat nibh eleifend. 
-                    Integer dignissim et est ut auctor. Cras vitae nulla lorem. Nulla facilisi. Cras hendrerit 
-                    tellus eget urna ultrices suscipit. Duis laoreet imperdiet ipsum, id consequat libero tempor 
-                    eu. 
-                </p>
-            </div>
-          </div>
+
+            <article-post-image class="item1"></article-post-image>
+            <article-post-text class="item2 textpart" title="Article 1"></article-post-text>
+            <article-post-image class="item3"></article-post-image>
+            <article-post-text class="item4 textpart" title="Article 2"></article-post-text>
+            <article-post-image class="item5"></article-post-image>
+            <article-post-text class="item6 textpart" title="Article 3"></article-post-text>
+            
+        </div><!--grid-content-->
         
     </section><!--main_content-->
 
@@ -77,5 +37,7 @@
     
     <script type="module" src="src/header.js"></script>
     <script type="module" src="src/footer.js"></script>
+    <script type="module" src="src/article-post-image.js"></script>
+    <script type="module" src="src/article-post-text.js"></script>
 </body>
 </html>
