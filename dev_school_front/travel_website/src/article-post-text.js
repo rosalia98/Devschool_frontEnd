@@ -1,7 +1,14 @@
+/* eslint-disable no-unused-vars */
+const axios = window.axios;
+    
 class PostText extends HTMLElement{
+    
     constructor(){
         super();
 
+        this.articles = [];
+        // this.getArticles();
+        
         const _posttext = document.createElement('footer');
         const _style = document.createElement('style');
         _style.innerHTML = 
@@ -14,6 +21,7 @@ class PostText extends HTMLElement{
             background-color: mistyrose;
         }
         `;
+        
         _posttext.innerHTML = `
             <div class="${this.getAttribute('class')}">
                 <h4>${this.getAttribute('title')}</h4>
@@ -31,5 +39,15 @@ class PostText extends HTMLElement{
         this._shadowRoot.appendChild(_posttext);
         this._shadowRoot.appendChild(_style)
     }
+    // getArticles(){
+    //     axios
+    //     .get('https://devschool-2020.firebaseio.com/rosalia-demartino/articles.json')
+    //     .then((resData) => {
+            
+    //         console.log(resData.data);
+            
+            
+    //     });
+    // }
 }
 customElements.define('article-post-text', PostText);

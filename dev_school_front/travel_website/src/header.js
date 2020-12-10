@@ -1,9 +1,4 @@
 import './navigation.js'
-import {
-    LitElement,
-    html,
-    css,
-  } from 'https://unpkg.com/lit-element@2.4.0/lit-element.js?module';
 
 class Header extends HTMLElement{
     constructor(){
@@ -24,7 +19,7 @@ class Header extends HTMLElement{
         this._shadowRoot.appendChild(_header);
         this._shadowRoot.appendChild(_style);
     }
-
+}
     //SAPTAMANA 5 NOTITE:
     // connectedCallback(){
     //     super.connectedCallback();
@@ -132,7 +127,7 @@ class Header extends HTMLElement{
     // })
     //   .then((response) => response.json())
     //   .then((response) => console.log(response));
-  }
+  
 
     
 customElements.define('header-element', Header);

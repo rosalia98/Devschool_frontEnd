@@ -38,8 +38,8 @@ class Navigation extends HTMLElement{
         `
         <nav class="nav">
             <ul class="nav-list">
-                <li><a href="homepage.html">Home</a></li>
-                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/destinations">Destinations</a></li>
                 <li><a href="#">Language</a></li>
             </ul>
         </nav>

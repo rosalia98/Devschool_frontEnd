@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import { 
     LitElement, html, css } 
-from 'https://unpkg.com/lit-element@2.4.0/lit-element.js?module'
+from 'lit-element';
 
 
 class Todo extends LitElement{
