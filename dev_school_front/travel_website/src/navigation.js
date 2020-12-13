@@ -20,7 +20,7 @@ class Navigation extends HTMLElement{
             border: 1px solid black;
             margin: 10px;
             flex: 1; 
-            
+            background-color: mistyrose;
         }
         .nav-list a{
             display: block;
