@@ -1,10 +1,54 @@
 class Navigation extends HTMLElement{
+
+    // updated(changedProperties){
+    //     if(changedProperties.has('theme')){
+    //         this.updateTheme();
+    //     }
+    // }
+
+    // updateTheme(){
+    //     document.head.querySelector("link[data-team]")?.remove();
+    //     const themeStyle = document.createElement('link');
+    //     themeStyle.dataset.theme = this.theme;
+    //     themeStyle.rel = 'stylesheet';
+    //     themeStyle.href = `./css/${this.theme.css}`
+    //     document.head.appendChild(themeStyle);
+    //     localStorage.setItem(this.team);
+    // }
+
+    // changeTheme(){
+    //     this.theme = this.theme ==='dark'?'light':'dark';
+    // }
+    
     constructor(){
         super();
         const _style = document.createElement('style');
         const _nav = document.createElement('nav');
-        _style.innerHTML = 
-        `.nav{
+
+        //console.log(window.location.pathname)//ramane mereu la fel, constructorul incarca o singura data
+
+        //varianta imperativa:
+        window.addEventListener('vaadin-router-location-changed', (event)=>{
+            let pathname = event.detail.location.pathname;
+            if( pathname == "/"){
+                this.shadowRoot.getElementById("homepage").classList.add("active");
+                this.shadowRoot.getElementById("destinationspage").classList.remove("active");
+            }else if(pathname == "/destinations"){
+                this.shadowRoot.getElementById("destinationspage").classList.add("active");
+                this.shadowRoot.getElementById("homepage").classList.remove("active");
+            }
+        });
+
+        //var checkbox = document.querySelector("input[name=checkbox]");
+        // checkbox.addEventListener('change', function() {
+        //     if (this.checked) {
+        //       //todo - add "dark class"
+        //     } else {
+        //       //todo - add "light class"
+        //     }
+        //   });
+
+        _style.innerHTML = `.nav{
             justify-content: center;
             text-align: center;
             display: flex;
@@ -33,14 +77,26 @@ class Navigation extends HTMLElement{
         }
         .nav-list a:hover{
             background-color: lightcoral;
+        }
+        .active{
+            background-color: lightcoral !important;
         }`;
         _nav.innerHTML = 
         `
         <nav class="nav">
             <ul class="nav-list">
-                <li><a href="/">Home</a></li>
-                <li><a href="/destinations">Destinations</a></li>
-                <li><a href="#">Language</a></li>
+                <li id="homepage">
+                    <a href="/">Home</a>
+                </li>
+                <li id="destinationspage">
+                    <a href="/destinations">Destinations</a>
+                </li>
+                <li>
+                    <a href="#">Language</a>
+                </li>
+                <li>
+                    <input type="checkbox" name="checkbox">Use dark theme</input>
+                </li>
             </ul>
         </nav>
         <slot name="title"></slot>

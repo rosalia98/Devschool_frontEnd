@@ -1,6 +1,5 @@
 import { LitElement, html, css} from "lit-element"
-import "./header.js";
-import "./footer.js";
+
 import "./article-destination.js";
 import "./article-post-image.js";
 import "./article-post-text.js";
@@ -10,9 +9,7 @@ const axios = window.axios;
 class MainComponent extends LitElement{
     render(){
         return html`
-        <header>
-        <header-element></header-element>
-    </header>
+        
     <section class="section1">
         <h3>Some subtitle for our travel website!</h3>
         <p>Nam vitae est urna. Curabitur maximus dui eros, 
@@ -36,7 +33,7 @@ class MainComponent extends LitElement{
         
     </section><!--main_content-->
 
-    <footer-element></footer-element>`
+    `
     }
     static get styles(){
         return css`
