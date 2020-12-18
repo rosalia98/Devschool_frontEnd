@@ -7,9 +7,14 @@ module.exports = {
     entry:"./dev_school_front/travel_website/src/main.js",
     plugins: [
         new htmlplugins({template: "./dev_school_front/travel_website/homepage.html"}),
-        // new copyplugin({pattern: [
-        //     {from: "./dev_school_front/travel_website", to:"./dev_school_front/travel_website"}
-        // ]})
+        new copyplugin({
+            patterns: [
+                {
+                    from: "dev_school_front/travel_website/mystyle.css", 
+                    to:"css/mystyle.css",
+                },
+            ]
+        }),
     ],
     devServer: {
         historyApiFallback: true
